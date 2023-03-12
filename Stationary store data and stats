@@ -1,0 +1,17 @@
+--Create stationary store inventory 
+
+Create table inventory (id integer primary key, name TEXT, price integer, sold integer);
+
+insert into inventory values (1, "pens", 1.50, 15);
+insert into inventory values (2, "paper", 12, 1);
+insert into inventory values (3, "highlighter", 6, 3);
+insert into inventory values (4, "planner", 20, 2);
+insert into inventory values (5, "eraser", 1.00, 60);
+
+--Display the database ordered by price 
+select * from inventory
+ORDER BY price;
+
+--Condense database to show items and amounts sold 
+select name, sum(sold) from inventory group by name;
+
